@@ -1,0 +1,86 @@
+.form__input {
+ flex: 1 1 auto;
+ padding: 1em;
+ border: 1px solid var(--light-grey);
+ border-radius: 0.54em;
+ font-size: 1em;
+ &--prime {
+  padding: 1.28em;
+ }
+ + .btn {
+  margin-left: 5px;
+ }
+}
+
+.form__group {
+ margin-bottom: 12px;
+ &:last-child {
+  margin-bottom: 0;
+ }
+ &--row {
+  display: flex;
+ }
+}
+
+.form__row {
+ display: flex;
+}
+
+.label {
+ position: relative;
+ flex: 1 1 100%;
+ width: 100%;
+}
+
+.label-radio {
+ display: flex;
+ align-items: center;
+ color: var(--light-text);
+ &:before {
+  content: "";
+  display: inline-block;
+  padding: 3px;
+  flex: 0 0 1em;
+  height: 1em;
+  border: 1px solid var(--light-grey);
+  border-radius: 100%;
+  margin-right: 0.5em;
+  background-color: #fff;
+  background-clip: content-box;
+  transition: background-color 0.5s linear;
+ }
+}
+
+input[type="radio"]:checked + .label-radio {
+ &:before {
+  background-color: var(--prime-color);
+ }
+}
+
+.label-checkbox {
+ display: flex;
+ align-items: center;
+ color: var(--light-text);
+ padding: 1em 0;
+ &:before {
+  content: "";
+  display: inline-block;
+  flex: 0 0 1.18em;
+  height: 1.18em;
+  border: 1px solid var(--light-grey);
+  border-radius: 0.2em;
+  margin-right: 0.5em;
+  background-color: #fff;
+
+  transition: background-color 0.5s linear;
+ }
+}
+input[type="checkbox"]:checked + .label-checkbox {
+ &:before {
+  background-color: var(--prime-color);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 11 9'%3E%3Cpath fill='%23fff' d='M3.852 7.02.945 4.111a.55.55 0 0 0-.777.776l3.296 3.296a.55.55 0 0 0 .776 0l6.592-6.591a.55.55 0 1 0-.777-.777L3.853 7.019Z'/%3E%3C/svg%3E");
+  background-size: 10px 7px;
+  background-repeat: no-repeat;
+  background-position: center center;
+ }
+}

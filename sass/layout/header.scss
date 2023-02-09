@@ -1,0 +1,23 @@
+.header {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding-top: 10px;
+ min-height: 50px;
+}
+
+.header__btn {
+ span {
+  margin-top: 0.4em;
+  display: block;
+  text-align: center;
+  font-size: 0.7em;
+ }
+}
+
+.header__icon {
+ display: block;
+ width: 28px;
+ height: 28px;
+ margin: auto;
+}

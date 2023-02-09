@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 150 150">
+<style>
+.shadow {
+		position: relative;
+		animation: pulse 3s ease infinite;
+}
+
+.shadow2 {
+		position: relative;
+		animation: pulse2 3s ease infinite;
+}
+
+@keyframes pulse {
+		0%, 100% {
+		r:50px;
+	}
+		50%{
+		r:55px;
+	}
+	}
+
+ @keyframes pulse2 {
+		0%, 100% {
+		r:65px;
+	}
+		50%{
+		r:70px;
+	}
+	}
+
+</style>
+  <circle class="shadow" cx="73" cy="73" r="50" fill="url(#b)"/>
+  <circle class="shadow2" cx="73" cy="73" r="65" fill="url(#a)"/>
+  <g filter="url(#c)">
+    <circle cx="73.5" cy="73.5" r="39.5" fill="#fff"/>
+  </g>
+  <path fill="#4687FF" fill-rule="evenodd" d="M73.029 54.485c.085-.117.295-.275.467-.351.378-.167.63-.176.974-.037.317.13.481.3.635.657.103.239.117 1.103.117 6.884v6.61l4.489.02 4.489.02.257.179c.286.198.54.67.543 1.009.002.276-9.783 21.726-10.076 22.09-.536.662-1.578.549-1.975-.216l-.171-.33V77.76l-4.489-.02-4.489-.02-.257-.178c-.286-.199-.54-.671-.543-1.01-.002-.23 9.741-21.648 10.029-22.047Z" clip-rule="evenodd"/>
+  <defs>
+    <linearGradient id="a" x1="73.5" x2="73.5" y1="0" y2="147" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#fff" stop-opacity=".05"/>
+    </linearGradient>
+    <linearGradient id="b" x1="73.5" x2="73.5" y1="16" y2="131" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff" stop-opacity=".64"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="c" width="93" height="95" x="27" y="34" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+      <feMorphology in="SourceAlpha" radius="7" result="effect1_dropShadow_5_328"/>
+      <feOffset dy="9"/>
+      <feGaussianBlur stdDeviation="7"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+      <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_5_328"/>
+      <feBlend in="SourceGraphic" in2="effect1_dropShadow_5_328" result="shape"/>
+    </filter>
+  </defs>
+</svg>

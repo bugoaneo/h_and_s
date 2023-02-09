@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <meta name="robots" content="all">
+  <meta property="og:title" content="Hide & Seek VPN" />
+  <meta property="og:image" content="img/logo.png" />
+  <meta property="og:description" content="" />
+  <meta name="description" content="Hide & Seek VPN" />
+  <meta name="keywords" content="Hide & Seek VPN" />
+
+  <link rel="icon" href="img/favicon.png" type="image/png" sizes="34x34">
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <meta name="theme-color" content="#4687ff">
+
+  <title>Hide & Seek VPN</title>
+  <link rel="preload" href="fonts/roboto-v30-latin_cyrillic-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body>
+  <div class="widget" id="widget">
+    <!-- welcome page -->
+    <div class="widget__wrapper" id="welcome">
+      <div class="container">
+        <div class="logo"><img src="img/logo_square.svg" width="118" alt="Hide & Seek VPN"></div>
+        <section class="section section--centered">
+          <h1 class="widget__title center-text">Connect to the already
+            created VPN server</h1>
+          <form action="" method="post" name="" class="form">
+            <div class="form__group form__group--row">
+              <input type="text" name="" id="" class="form__input form__input--prime" placeholder="Connection code">
+            </div>
+            <div class="form__group"><button class="btn btn--prime">Connect</button></div>
+            <div class="form__group">
+              <label for="fileUpload" class="btn btn--light btn--upload">
+                <span>Open File</span>
+                <input class="invisible" type="file" id="fileUpload">
+              </label>
+            </div>
+          </form>
+        </section>
+      </div>
+    </div>
+
+    <!-- main page -->
+    <div class="widget__wrapper widget__wrapper--bg" id="main">
+      <div class="container">
+        <header class="header light-color">
+          <button type="button" class="header__btn" data-target="location">
+            <svg class="header__icon" viewBox="0 0 19 19" alt="Location" width="28">
+              <use xlink:href="img/sprite.svg#planet"></use>
+            </svg>
+            <span>Location</span>
+          </button>
+          <button type="button" class="header__btn" data-target=" ">
+            <svg class="header__icon" viewBox="0 0 24 24" alt="Settings" width="28">
+              <use xlink:href="img/sprite.svg#gear"></use>
+            </svg>
+            <span>Settings</span>
+          </button>
+        </header>
+        <section class="section section--col">
+          <div class="section__media"><img src="img/disconnect.svg" alt="VPN is disconnected" width="147"></div>
+          <div class="section__info light-color">
+            <h1 class="section__caption center-text">Disconnect</h1>
+            <div class="section__row">
+              <div class="section__cell">Server:</div>
+              <div class="section__cell wide right-text ">
+                <button type="button" class="location-btn" data-target="location"><img src="img/flag/pl.svg" class="icon" alt="Poland" width="20"> <span>Poland</span></button> <span>(46.101.130.173)</span>
+              </div>
+            </div>
+            <div class="section__row">
+              <div class="section__cell">Service:</div>
+              <div class="section__cell wide right-text">Open VPN over ShadowSocks</div>
+            </div>
+            <div class="section__row">
+              <div class="section__cell">DNS:</div>
+              <div class="section__cell wide right-text">1.1.1.1.1.1.0</div>
+            </div>
+          </div>
+        </section>
+        <section class="section section--col section--bg">
+          <div class="section__row speed-section border-bottom">
+            <div class="section__cell row">
+              <div class="section__icon speed-icon">
+                <svg class="section__icon" viewBox="0 0 32 31" alt="Download speed" width="32">
+                  <use xlink:href="img/sprite.svg#download-speed"></use>
+                </svg>
+              </div>
+              <div class="section__content">
+                <p class="section__note">Download</p>
+                <p class="section__speednum download">0.00 mbps</p>
+              </div>
+            </div>
+            <div class="section__cell row">
+              <svg class="section__icon speed-icon" viewBox="0 0 32 33" alt="Download speed" width="32">
+                <use xlink:href="img/sprite.svg#upload-speed"></use>
+              </svg>
+              <div class="section__content">
+                <p class="section__note">Upload</p>
+                <p class="section__speednum upload">0.00 mbps</p>
+              </div>
+            </div>
+          </div>
+          <h2 class="section__caption">How to use VPN</h2>
+          <ul class="simple-list">
+            <li>
+              <div class="label">
+                <input class="invisible" type="radio" name="howToUse" id="h1" checked>
+                <label class="label-radio" for="h1">For all connections</label>
+              </div>
+            </li>
+            <li>
+              <div class="label">
+                <input class="invisible" type="radio" name="howToUse" id="h2">
+                <label class="label-radio" for="h2">For selected sites</label>
+              </div>
+            </li>
+            <li>
+              <div class="label">
+                <input class="invisible" type="radio" name="howToUse" id="h3">
+                <label class="label-radio" for="h3">Except selected sites
+                </label>
+              </div>
+            </li>
+          </ul>
+          <div class="section__row">
+            <button class="btn btn--light" data-target="add-site">Add site</button>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- add site page -->
+    <div class="widget__wrapper" id="add-site">
+      <div class="container">
+        <header class="header">
+          <button type="button" class="close-btn">
+            <svg class="header__icon prime-color" viewBox="0 0 18 16" alt="Back to main" width="16">
+              <use xlink:href="img/sprite.svg#arrow-left"></use>
+            </svg>
+          </button>
+        </header>
+        <section class="section section--col">
+          <h2 class="section__title">These sites will be opened using VPN</h2>
+          <p>Web site/Hostname/IP adress/Subnet</p>
+          <form action="" method="post" name="" class="form">
+            <div class="form__group form__group--row">
+              <input type="text" name="" id="" class="form__input" placeholder="yousite.com or IP adress">
+              <button class="btn btn--prime btn--small">
+                <svg class="btn__icon light-color" viewBox="0 0 17 17" alt="" width="18">
+                  <use xlink:href="img/sprite.svg#square-plus"></use>
+                </svg>
+              </button>
+
+              <button class="btn btn--clean btn--small">
+                <svg class="btn__icon grey-color" viewBox="0 0 17 17" alt="" width="18">
+                  <use xlink:href="img/sprite.svg#box-archive"></use>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </section>
+        <section class="section section--action">
+          <h2 class="invisible">Action group</h2>
+          <div class="section__row">
+            <button class="btn btn--prime" type="button">Delete selected</button>
+          </div>
+          <div class="section__row">
+            <button class="btn btn--light" type="button">Select all</button>
+          </div>
+          <div class="section__row">
+            <button class="btn btn--light" type="button">Export all</button>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- settings page -->
+    <div class="widget__wrapper" id="settings">
+      <div class="container">
+        <header class="header">
+          <button type="button" class="close-btn" data-target="close">
+            <svg class="header__icon prime-color" viewBox="0 0 18 16" alt="Back to main" width="16">
+              <use xlink:href="img/sprite.svg#arrow-left"></use>
+            </svg>
+          </button>
+        </header>
+        <section class="section section--col">
+          <h2 class="section__title">Settings</h2>
+          <ul class="menu">
+            <li>
+              <button class="btn btn--icon" type="button" data-target="app-settings">
+                <svg class="btn__icon prime-color" viewBox="0 0 24 24" alt="Back to app settings" width="18">
+                  <use xlink:href="img/sprite.svg#gear"></use>
+                </svg> App settings</button>
+            </li>
+            <li>
+              <button class="btn btn--icon" type="button" data-target="dns-settings">
+                <svg class="btn__icon prime-color" viewBox="0 0 19 19" alt="Back to DNS settings" width="18">
+                  <use xlink:href="img/sprite.svg#planet"></use>
+                </svg> DNS settings</button>
+            </li>
+            <li>
+              <button class="btn btn--icon" type="button" data-target="servise-settings">
+                <svg class="btn__icon prime-color" viewBox="0 0 17 13" alt="Back to servise settings" width="18">
+                  <use xlink:href="img/sprite.svg#sliders"></use>
+                </svg> Servise settings</button>
+            </li>
+          </ul>
+        </section>
+        <div class="section section--action">
+          <button class="btn btn--icon btn--border" type="button" data-target="close">
+            <svg class="btn__icon prime-color" viewBox="0 0 17 17" alt="Back to main" width="17">
+              <use xlink:href="img/sprite.svg#square-left-arrow"></use>
+            </svg> Exite</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- app-settings page -->
+    <div class="widget__wrapper" id="app-settings">
+      <div class="container">
+        <header class="header">
+          <button type="button" class="close-btn" data-target="close">
+            <svg class="header__icon prime-color" viewBox="0 0 18 16" alt="Back to main" width="16">
+              <use xlink:href="img/sprite.svg#arrow-left"></use>
+            </svg>
+          </button>
+        </header>
+        <section class="section section--col">
+          <h2 class="section__title">Application Settings</h2>
+          <form action="" method="post" name="" class="form">
+            <div class="form__group">
+              <div class="label border-bottom">
+                <input class="invisible" type="checkbox" name="" id="chb1" checked>
+                <label class="label-checkbox" for="chb1">Auto connect
+                </label>
+              </div>
+              <div class="label border-bottom">
+                <input class="invisible" type="checkbox" name="" id="chb2">
+                <label class="label-checkbox" for="chb2">Auto start
+                </label>
+              </div>
+              <div class="label">
+                <input class="invisible" type="checkbox" name="" id="chb3">
+                <label class="label-checkbox" for="chb3">Start minimized
+                </label>
+              </div>
+            </div>
+
+            <div class="form__group">
+              <button class="btn btn--prime">Check for updates</button>
+            </div>
+            <div class="form__group">
+              <p class="section__note center-text">Software version: 2.0.10 (Jun 11 2022)</p>
+            </div>
+            <div class="form__group">
+              <div class="label">
+                <input class="invisible" type="checkbox" name="" id="chb4">
+                <label class="label-checkbox" for="chb4">Keep logs
+                </label>
+              </div>
+            </div>
+          </form>
+        </section>
+        <section class="section section--action">
+          <h2 class="invisible">Action group</h2>
+          <div class="section__row">
+            <button class="btn btn--light" type="button">Open logs folder</button>
+          </div>
+          <div class="section__row">
+            <button class="btn btn--light" type="button">Export logs</button>
+          </div>
+          <div class="section__row">
+            <button class="btn btn--light" type="button">Clear logs</button>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- dns-servise page -->
+    <div class="widget__wrapper" id="dns-servise">
+      <div class="container">
+        <header class="header">
+          <button type="button" class="close-btn" data-target="close">
+            <svg class="header__icon prime-color" viewBox="0 0 18 16" alt="Back to main" width="16">
+              <use xlink:href="img/sprite.svg#arrow-left"></use>
+            </svg>
+          </button>
+        </header>
+        <section class="section section--col">
+          <h2 class="section__title">DNS Servers</h2>
+          <form action="" method="post" name="" class="form">
+            <div class="form__group">
+              <div class="label">
+                <input class="invisible" type="checkbox" name="" id="rec1" checked>
+                <label class="label-checkbox" for="rec1">Use Hide&Seek service (Recommended)</label>
+              </div>
+            </div>
+            <div class="form__group">
+              <p>Primary DNS server</p>
+              <div class="form__row">
+                <input type="text" name="" id="" class="form__input" placeholder="1.1.1.1">
+                <button class="btn btn--prime btn--small">
+                  <svg class="btn__icon light-color" viewBox="0 0 15 18" alt="" width="18">
+                    <use xlink:href="img/sprite.svg#arrow-right-rotate"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="form__group">
+              <p>Secondary DNS server</p>
+              <div class="form__row">
+                <input type="text" name="" id="" class="form__input" placeholder="1.1.1.1">
+                <button class="btn btn--prime btn--small">
+                  <svg class="btn__icon light-color" viewBox="0 0 15 18" alt="" width="18">
+                    <use xlink:href="img/sprite.svg#arrow-right-rotate"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </form>
+        </section>
+      </div>
+    </div>
+
+    <!-- installed-servise page -->
+    <div class="widget__wrapper" id="installed-servise">
+      <div class="container">
+        <header class="header">
+          <button type="button" class="close-btn" data-target="close">
+            <svg class="header__icon prime-color" viewBox="0 0 18 16" alt="Back to main" width="16">
+              <use xlink:href="img/sprite.svg#arrow-left"></use>
+            </svg>
+          </button>
+        </header>
+        <section class="section section--col">
+          <h2 class="section__title">Installed Services</h2>
+          <p>Installed Protocols and Services</p>
+          <ul class="menu menu--textitem scroll">
+            <li class="menu__item">
+              <div class="menu__pic"><img src="img/flag/de.svg" alt="Germany" width="25"></div>
+              <span class="menu__textlabel">Open VPN</span>
+              <svg class="menu__icon" viewBox="0 0 17 17" alt="check-square" width="18">
+                <use xlink:href="img/sprite.svg#check-square"></use>
+              </svg>
+            </li>
+            <li class="menu__item">
+              <span class="menu__textlabel">ShadowSocks</span>
+              <svg class="menu__icon" viewBox="0 0 17 17" alt="check-square" width="18">
+                <use xlink:href="img/sprite.svg#check-square"></use>
+              </svg>
+            </li>
+            <li class="menu__item">
+              <span class="menu__textlabel">WireGuard</span>
+              <svg class="menu__icon" viewBox="0 0 17 17" alt="square-xmark" width="18">
+                <use xlink:href="img/sprite.svg#square-xmark"></use>
+              </svg>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <!-- server page aside section -->
+    <div class="widget__wrapper widget__wrapper--aside" id="servers">
+      <div class="container">
+        <header class="header">
+          <div class="header__title">Servers</div>
+          <button type="button" class="close-menu" data-target="close">
+            Close
+          </button>
+        </header>
+        <section class="section section--scroll">
+          <h2 class="invisible">Servers</h2>
+          <div class="scroll-wrapper">
+            <ul class="menu menu--textitem">
+              <li class="menu__item">
+                <div class="menu__pic"><img src="img/flag/de.svg" alt="Germany" width="25"></div>
+                <span class="menu__textlabel">Germany, Berlin</span>
+                <svg class="menu__icon" viewBox="0 0 17 17" alt="check-square" width="18">
+                  <use xlink:href="img/sprite.svg#check-square"></use>
+                </svg>
+              </li>
+              <li class="menu__item">
+                <div class="menu__pic"><img src="img/flag/it.svg" alt="Italy" width="25"></div>
+                <span class="menu__textlabel">Italy, Rome</span>
+              </li>
+              <li class="menu__item">
+                <div class="menu__pic"><img src="img/flag/se.svg" alt="Spain" width="25"></div>
+                <span class="menu__textlabel">Sweden, Stockholm</span>
+              </li>
+              <li class="menu__item">
+                <div class="menu__pic"><img src="img/flag/pl.svg" alt="Poland" width="25"></div>
+                <span class="menu__textlabel">Poland, Warsave, wdfgffghgfghjfgjgjhg</span>
+                <svg class="menu__icon" viewBox="0 0 17 17" alt="square-xmark" width="18">
+                  <use xlink:href="img/sprite.svg#square-xmark"></use>
+                </svg>
+              </li>
+              <!-- <li class="menu__item">
+                <div class="menu__pic"><img src="img/flag/de.svg" alt="Germany" width="25"></div>
+                <span class="menu__textlabel">Open VPN</span>
+                <svg class="menu__icon" viewBox="0 0 17 17" alt="check-square" width="18">
+                  <use xlink:href="img/sprite.svg#check-square"></use>
+                </svg>
+              </li>
+              <li class="menu__item">
+                <span class="menu__textlabel">ShadowSocks</span>
+                <svg class="menu__icon" viewBox="0 0 17 17" alt="check-square" width="18">
+                  <use xlink:href="img/sprite.svg#check-square"></use>
+                </svg>
+              </li>
+              <li class="menu__item">
+                <span class="menu__textlabel">WireGuard</span>
+                <svg class="menu__icon" viewBox="0 0 17 17" alt="square-xmark" width="18">
+                  <use xlink:href="img/sprite.svg#square-xmark"></use>
+                </svg>
+              </li>
+              <li class="menu__item">
+                <div class="menu__pic"><img src="img/flag/de.svg" alt="Germany" width="25"></div>
+                <span class="menu__textlabel">Open VPN</span>
+                <svg class="menu__icon" viewBox="0 0 17 17" alt="check-square" width="18">
+                  <use xlink:href="img/sprite.svg#check-square"></use>
+                </svg>
+              </li>
+              <li class="menu__item">
+                <span class="menu__textlabel">ShadowSocks</span>
+                <svg class="menu__icon" viewBox="0 0 17 17" alt="check-square" width="18">
+                  <use xlink:href="img/sprite.svg#check-square"></use>
+                </svg>
+              </li>
+              <li class="menu__item">
+                <span class="menu__textlabel">WireGuard</span>
+                <svg class="menu__icon" viewBox="0 0 17 17" alt="square-xmark" width="18">
+                  <use xlink:href="img/sprite.svg#square-xmark"></use>
+                </svg>
+              </li>
+              <li class="menu__item">
+                <div class="menu__pic"><img src="img/flag/de.svg" alt="Germany" width="25"></div>
+                <span class="menu__textlabel">Open VPN</span>
+                <svg class="menu__icon" viewBox="0 0 17 17" alt="check-square" width="18">
+                  <use xlink:href="img/sprite.svg#check-square"></use>
+                </svg>
+              </li>
+              <li class="menu__item">
+                <span class="menu__textlabel">ShadowSocks</span>
+                <svg class="menu__icon" viewBox="0 0 17 17" alt="check-square" width="18">
+                  <use xlink:href="img/sprite.svg#check-square"></use>
+                </svg>
+              </li>
+              <li class="menu__item">
+                <span class="menu__textlabel">WireGuard</span>
+                <svg class="menu__icon" viewBox="0 0 17 17" alt="square-xmark" width="18">
+                  <use xlink:href="img/sprite.svg#square-xmark"></use>
+                </svg>
+              </li>
+              <li class="menu__item">
+                <div class="menu__pic"><img src="img/flag/de.svg" alt="Germany" width="25"></div>
+                <span class="menu__textlabel">Open VPN</span>
+                <svg class="menu__icon" viewBox="0 0 17 17" alt="check-square" width="18">
+                  <use xlink:href="img/sprite.svg#check-square"></use>
+                </svg>
+              </li>
+              <li class="menu__item">
+                <span class="menu__textlabel">ShadowSocks</span>
+                <svg class="menu__icon" viewBox="0 0 17 17" alt="check-square" width="18">
+                  <use xlink:href="img/sprite.svg#check-square"></use>
+                </svg>
+              </li>
+              <li class="menu__item">
+                <span class="menu__textlabel">WireGuard</span>
+                <svg class="menu__icon" viewBox="0 0 17 17" alt="square-xmark" width="18">
+                  <use xlink:href="img/sprite.svg#square-xmark"></use>
+                </svg>
+              </li>
+              <li class="menu__item">
+                <div class="menu__pic"><img src="img/flag/de.svg" alt="Germany" width="25"></div>
+                <span class="menu__textlabel">Open VPN</span>
+                <svg class="menu__icon" viewBox="0 0 17 17" alt="check-square" width="18">
+                  <use xlink:href="img/sprite.svg#check-square"></use>
+                </svg>
+              </li>
+              <li class="menu__item">
+                <span class="menu__textlabel">ShadowSocks</span>
+                <svg class="menu__icon" viewBox="0 0 17 17" alt="check-square" width="18">
+                  <use xlink:href="img/sprite.svg#check-square"></use>
+                </svg>
+              </li>
+              <li class="menu__item">
+                <span class="menu__textlabel">WireGuard</span>
+                <svg class="menu__icon" viewBox="0 0 17 17" alt="square-xmark" width="18">
+                  <use xlink:href="img/sprite.svg#square-xmark"></use>
+                </svg>
+              </li> -->
+            </ul>
+          </div>
+        </section>
+        <!-- <section class="section section--action">
+          <div class="container"></div>
+        </section> -->
+      </div>
+    </div>
+
+    <!-- connection demo -->
+    <div class="widget__wrapper widget__wrapper--bg" id="connect-demo">
+      <div class="container">
+        <section class="section section--centered">
+          <h1 class="widget__title center-text">Click on button!!!</h1>
+          <div class="section__media">
+            <div class="connection">
+              <div class="connection__disconnect">
+                <img src="img/disconnect.svg" alt="VPN is disconnected" width="147">
+              </div>
+              <div class="connection__connect">
+                <img src="img/connect.svg" alt="VPN is connected" width="147">
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+  <!-- TODO:  REMOVE!!! Fore demo only-->
+  <div class="demo">
+    <style>
+      .demo {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        padding: 0 10px;
+        margin: 50px auto 0 auto;
+        gap: 10px;
+      }
+
+      .demo__btn {
+        width: auto;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 1 200px;
+        flex: 0 1 200px;
+      }
+    </style>
+    <button class="btn btn--prime demo__btn" data-target="welcome">welcome</button>
+    <button class="btn btn--prime demo__btn" data-target="main">Main</button>
+    <button class="btn btn--prime demo__btn" data-target="add-site">add-site</button>
+    <button class="btn btn--prime demo__btn" data-target="settings">settings</button>
+    <button class="btn btn--prime demo__btn" data-target="app-settings">app-settings</button>
+    <button class="btn btn--prime demo__btn" data-target="dns-servise">dns-servise</button>
+    <button class="btn btn--prime demo__btn" data-target="installed-servise">installed-servise</button>
+    <button class="btn btn--prime demo__btn" data-target="servers">servers</button>
+    <button class="btn btn--prime demo__btn" data-target="connect-demo">connect-demo</button>
+  </div>
+  <script src="js/scripts.js"></script>
+</body>
+
+</html>
